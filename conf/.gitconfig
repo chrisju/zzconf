@@ -1,0 +1,28 @@
+[alias]
+    co = checkout
+    ci = commit -a
+    cia = commit -a --amend
+    st = status
+    logc = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset'
+    logsimple = log --graph --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset: %s %Cblue(%ar)%Creset'
+    logfile = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --stat
+    logweek = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --since=5.days
+    logday = log --author=zz --author=chrisju --author=zhuweiwei --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --since=12.hours
+    tree = ls-tree -r --name-only
+    svnclone = svn clone --localtime
+    svnup = svn rebase --localtime
+    svncommit = svn dcommit --localtime
+[core]
+    excludesfile = ~/.gitignore
+[diff]
+	tool = vimdiff
+[difftool "vimdiff"]
+	cmd = vimdiff
+[difftool]
+	prompt = false
+[color]
+	ui = auto
+[credential]
+	helper = cache
+[push]
+	default = simple

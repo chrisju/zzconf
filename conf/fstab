@@ -1,0 +1,13 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda8
+UUID=27edcd2d-d506-4cbd-b882-14a38be062b5	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda6
+UUID=47a353e1-2634-4ade-9f59-0d3d0e0b268e	/mnt/DATA	ext4       	defaults			0 2
+
+# /dev/sda7
+UUID=77BA-BBB7					/mnt/STORE	exfat       	defaults,user,iocharset=utf8,umask=0,nls=utf8,nosuid	0 0
+

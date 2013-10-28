@@ -1,0 +1,51 @@
+urxvt*foreground: #f2f2f2
+urxvt*background: #1C1C1C
+urxvt*color0: #101010
+urxvt*color1: #f13a21
+urxvt*color2: #93f91d
+urxvt*color3: #ffd00a
+urxvt*color4: #004f9e
+urxvt*color5: #ec0048
+urxvt*color6: #2aa7e7
+urxvt*color7: #f2f2f2
+urxvt*color8: #1d202f
+urxvt*color9: #ff361e
+urxvt*color10: #ffc005
+urxvt*color11: #93ff00
+urxvt*color12: #0071ff
+urxvt*color13: #ef0051
+urxvt*color14: #4bb8fd
+urxvt*color15: #a020f0
+!urxvt*transparent: true
+!URxvt*tintColor: Blue
+!allcolor: http://www.htmlgoodies.com/tutorials/colors/article.php/3478921
+!URxvt*tintColor: Aliceblue
+urxvt*shading: 20
+urxvt*fading: 50
+URxvt.font:xft:Bitstream Vera Sans Mono:size=9
+!Xft.dpi:96
+!URxvt.font:xft:文泉驿等宽正黑:size=9:style=Regular:antialias=true,xft:文泉驿等宽正黑:size=8:style=Regular:antialias=true
+!URxvt.boldfont:xft:文泉驿等宽正黑:size=9:style=BOld:antialias=true,xft:文泉驿等宽正黑:size=8:style=Bold:antialias=true
+
+!#########
+!URxvt*transparent: true
+!URxvt*tintColor: Blue
+!#URxvt*shading: 40
+!URxvt*saveLines: 12000
+!URxvt*foreground: White
+!URxvt*background: Blue
+!#URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true:hinting=true
+!#URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!#URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
+!#URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
+!#URxvt*font: xft:terminus:pixelsize=15
+!#URxvt*boldFont: xft:terminus:bold:pixelsize=15
+!#URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+!#URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+!URxvt*color4: RoyalBlue
+!URxvt*color12: RoyalBlue
+!URxvt*scrollBar: true
+!URxvt*scrollBar_right: false
+!URxvt*scrollstyle: rxvt
