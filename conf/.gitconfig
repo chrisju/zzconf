@@ -24,5 +24,3 @@
 	ui = auto
 [credential]
 	helper = cache
-[push]
-	default = simple

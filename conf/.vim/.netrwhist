@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/mnt/DATA/vimwiki/wiki'
+let g:netrw_dirhist_2='/mnt/DATA/vimwiki/config'
+let g:netrw_dirhist_3='/mnt/DATA/vimwiki/blog'
+let g:netrw_dirhist_4='/mnt/DATA/wiki'

@@ -3,8 +3,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 设定默认解码
 set fenc=utf-8
-set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936,big5
+set fencs=ucs-bom,utf-8,gb18030,cp936,latin1
 set enc=utf-8
+set fileencodings=ucs-bom,utf-8,gb18030,cp936,latin1
 let &termencoding=&encoding
 
 " 不要使用vi的键盘模式，而是vim自己的
@@ -246,7 +247,7 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen load
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
+"filetype off
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -353,9 +354,6 @@ endf
 :inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 :inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 :inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
-
-"加上日期 对应F2
-:map <F2> <ESC>gg:read !date<CR>
 
 "选中一段文字并全文搜索这段文字
 :vnoremap <silent> ,/ y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
@@ -509,6 +507,16 @@ let g:vimwiki_use_mouse = 1
 
 " 不要将驼峰式词组作为 Wiki 词条
 let g:vimwiki_camel_case = 0
+
+" 切换列表项的开关（选中/反选）原始为C-Space,易冲突
+map <S-t> <Plug>VimwikiToggleListItem
+
+map <S-F5> :VimwikiAll2HTML<cr>
+map <F5> :Vimwiki2HTML<cr>
+
+"加上日期
+":map <F2> <ESC>gg:read !echo `date '+\%Y-\%m-\%d \%H:\%M:\%S'`<CR>
+:map <F2> <ESC>gg:read !echo -e "*`date '+\%Y-\%m-\%d \%H:\%M:\%S'`*\n_cat_\n\`tag\`\n----\n\%toc"<CR>
 
 let g:vimwiki_list = [{
 \ 'path': '~/store/htmldoc/wiki',

@@ -12,39 +12,29 @@ PS1='[\u@\h \W]\$ '
 # Disable terminal flow control altogether to use ctrl-s in history searching
 stty -ixon
 
-# 追加模式记录history
-shopt -s histappend
-# 清除重复命令
-# HISTCONTROL=erasedups
-# 忽略重复的命令
-export HISTCONTROL=ignoredups
-# 忽略由冒号分割的这些命令开头的命令
-export HISTIGNORE="[ \t]*:bg:fg:exit:history"
-# 设置保存历史命令的文件大小
-export HISTFILESIZE=1000000
-# 保存历史命令条数
-export HISTSIZE=10000
-
 if [ -n $TERM ]; then export LANGUAGE=en_US.UTF-8; fi
 export GST_ID3_TAG_ENCODING=GBK:UTF-8:GB18030
 export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030
 export EDITOR="vim"
 export PYTHONSTARTUP=~/.pythonstartup
 
-export PATH=$PATH:/home/zz/bin
+export PATH=$PATH:~/bin
 
 # for archlinux
 alias vi=vim
-alias ll='ls -l'
 alias zzxdgmenu='xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/.config/awesome/menu.lua'
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
+#alias venvpy3.3='. ~/.venv3.3/bin/activate'
 alias utserver='cd /mnt/DATA/soft/utorrent-server-v3_0;./utserver'
 alias goagent='python2 /mnt/DATA/soft/goagent/local/proxy.py'
-alias zzproxy='export http_proxy=127.0.0.1:8087;export ftp_proxy=127.0.0.1:8087'
-alias zzproxyoff='export http_proxy=;export ftp_proxy='
+alias zzproxy='export http_proxy=127.0.0.1:8118;export https_proxy=127.0.0.1:8118;export ftp_proxy=127.0.0.1:8118'
+alias zzproxyoff='export http_proxy=;export https_proxy=;export ftp_proxy='
 
 # 下载网站
 # -t重试次数 -Q总大小限制 -l深度可用数字
@@ -52,6 +42,7 @@ alias zzgetsite='wget -t 5 -Q 100m -r -E -l inf -k -p -np'
 #alias zzgetsite2='wget -r -p -np -k'
 
 alias zzval='valgrind --tool=memcheck --leak-check=full'
+alias recordscreen='ffmpeg -f x11grab -s 1366x768 -r 25 -i :0.0 -sameq /tmp/out.mpg'
 
 #alias n7open="mtpfs -o allow_other /media/n7"
 #alias n7close="fusermount -u /media/n7"
