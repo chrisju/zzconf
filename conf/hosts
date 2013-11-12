@@ -1,11 +1,3 @@
-#
-# /etc/hosts: static lookup table for host names
-#
-
-#<ip-address>	<hostname.domain.org>	<hostname>
-127.0.0.1	localhost.localdomain	localhost
-::1		localhost.localdomain	localhost
-
 
 #SmartHosts START
 
@@ -747,18 +739,6 @@
 203.208.46.206	www.youtube.com
 203.208.46.206	ytimg.l.google.com
 #YouTube END
-
-#GitHub START
-204.232.175.78	documentcloud.github.com
-207.97.227.239	github.com
-204.232.175.94	gist.github.com
-107.20.136.254	help.github.com
-207.97.227.252	nodeload.github.com
-199.27.76.130	raw.github.com
-107.22.3.110	status.github.com
-204.232.175.78	training.github.com
-207.97.227.243	www.github.com
-#GitHub END
 
 #Feedly START
 173.194.38.137	feedly-beta.appspot.com
