@@ -523,3 +523,5 @@ let g:vimwiki_list = [{
 \ 'path_html': '~/store/htmldoc/html/',
 \ 'auto_export': 1,}]
 
+:set directory=.,$TEMP
+
