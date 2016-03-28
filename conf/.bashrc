@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+PS1='\[\033[01;34m\][\u\[\033[00m\]@ \h \[\033[01;32m\]\W\[\033[01;34m\]]\[\033[00m\]\$'
 
 # for history
 # Disable terminal flow control altogether to use ctrl-s in history searching
