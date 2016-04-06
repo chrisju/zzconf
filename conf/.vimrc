@@ -487,6 +487,12 @@ map M :call ShowMan()<CR>
 "For more help type :help ConqueTerm
 map <F8> :ConqueTermSplit bash<CR>
 nmap tl :Tlist<cr>
+let Tlist_Show_One_File        = 1             " 只显示当前文件的tags
+let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Use_Right_Window     = 1             " 在右侧窗口中显示
+"let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
+"let Tlist_Sort_Type = "name"                   " items in tags sorted by name
+
 
 set tags+=/usr/include/gtk-2.0/tags
 "set path+=/usr/include/gtk-2.0/gtk
@@ -511,6 +517,7 @@ let g:vimwiki_camel_case = 0
 " 切换列表项的开关（选中/反选）原始为C-Space,易冲突
 map <S-t> <Plug>VimwikiToggleListItem
 
+" 用F5和Shift-F5生成html
 map <S-F5> :VimwikiAll2HTML<cr>
 map <F5> :Vimwiki2HTML<cr>
 
@@ -519,9 +526,12 @@ map <F5> :Vimwiki2HTML<cr>
 :map <F2> <ESC>gg:read !echo -e "*`date '+\%Y-\%m-\%d \%H:\%M:\%S'`*\n_cat_\n\`tag\`\n----\n\%toc"<CR>
 
 let g:vimwiki_list = [{
-\ 'path': '~/store/htmldoc/wiki',
-\ 'path_html': '~/store/htmldoc/html/',
+\ 'path': '/mnt/DATA/proj/wikiblog/',
+\ 'path_html': '/mnt/DATA/proj/vimwikiblog/html/',
+\ 'template_path': '/mnt/DATA/proj/vimwikiblog/config/',
+\ 'template_default': 'zz',
+\ 'template_ext': '.tpl',
+\ 'css_name': 'style0.css',
 \ 'auto_export': 1,}]
 
 :set directory=.,$TEMP
-
