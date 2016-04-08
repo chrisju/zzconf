@@ -278,6 +278,7 @@ if has("autocmd")
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \   exe "normal g`\"" |
                 \ endif
+    autocmd BufNewFile *.py 0r ~/.vim/template/python/tmpl.py
 endif " has("autocmd")
 
 " 能够漂亮地显示.NFO文件
@@ -535,3 +536,28 @@ let g:vimwiki_list = [{
 \ 'auto_export': 1,}]
 
 :set directory=.,$TEMP
+
+"------- vim-go  ---------
+"<leader> is \
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>i <Plug>(go-install)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+
+"for lagging
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+
