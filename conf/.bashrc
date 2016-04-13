@@ -20,13 +20,24 @@ export PYTHONSTARTUP=~/.pythonstartup
 
 export PATH=$PATH:~/bin
 
+
+#android
+export JAVA_HOME=/opt/java6/jdk1.6.0_45
+export PATH=$PATH:$JAVA_HOME/bin
+export ANDROID_NDK=/mnt/DATA/dev/android-ndk-r9
+export PATH=$PATH:$ANDROID_NDK
+export ANDROID_SDK=/mnt/DATA/dev/android-studio/sdk
+export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
+
+
 # for archlinux
 alias vi=vim
 alias zzxdgmenu='xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/.config/awesome/menu.lua'
 
-alias ll='ls -alF'
+
 alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -lh'
+alias lp="ls -l |awk '{print \$1 \" \" \$2 \" \" \$3 \" \" \$4 \" \" \$5 \" \" \$6 \" \" \$7 \" \" \$8 \" \" i\$9}' i=`pwd`'/'"
 alias py='python'
 alias py2='python2'
 alias py3='python3'
@@ -57,11 +68,8 @@ alias pyupload='python ~/bin/SimpleHTTPServerWithUpload.py'
 
 #axel -a -n 9 -s 200000 -o "xx.zip" "http//ss.ss.ss.ss"
 
-#android
-export JAVA_HOME=/opt/java6/jdk1.6.0_45
-export PATH=$PATH:$JAVA_HOME/bin
-export ANDROID_NDK=/mnt/DATA/dev/android-ndk-r9
-export PATH=$PATH:$ANDROID_NDK
-export ANDROID_SDK=/mnt/DATA/dev/android-studio/sdk
-export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
 
+alias zzss='sslocal -c /etc/shadowsocks/config-puff.json'
+alias zzss2='sslocal -c /etc/shadowsocks/config-vps.json'
+alias zzcdtm='cd ~/.longene/tm2013/drive_c/Program\ Files/Tencent/tm2013/Users/69791669/FileRecv/'
+alias zzupblog='cd /mnt/DATA/proj/vimwikiblog/;python3 tools/vimwiki2blog.py -c config/config.json'
