@@ -266,7 +266,7 @@ let g:pymode_options_other= 0
 " 只在下列文件类型被侦测到的时候显示行号，普通文本文件不显示
 
 if has("autocmd")
-    autocmd FileType xml,html,c,cs,java,perl,shell,bash,cpp,python,vim,php,ruby set number
+    autocmd FileType xml,html,c,cs,java,perl,shell,bash,cpp,python,vim,php,ruby,go set number
     autocmd FileType xml,html vmap <C-o> <ESC>'<i<!--<ESC>o<ESC>'>o-->
     autocmd FileType java,c,cpp,cs vmap <C-o> <ESC>'<o/*<ESC>'>o*/
     autocmd FileType c,cpp,cs source ~/.vim/cpp/project.vim
@@ -279,6 +279,7 @@ if has("autocmd")
                 \   exe "normal g`\"" |
                 \ endif
     autocmd BufNewFile *.py 0r ~/.vim/template/python/tmpl.py
+    autocmd BufNewFile *.go 0r ~/.vim/template/hello.go
 endif " has("autocmd")
 
 " 能够漂亮地显示.NFO文件
@@ -530,10 +531,13 @@ let g:vimwiki_list = [{
 \ 'path': '/mnt/DATA/proj/wikiblog/',
 \ 'path_html': '/mnt/DATA/proj/vimwikiblog/html/',
 \ 'template_path': '/mnt/DATA/proj/vimwikiblog/config/',
-\ 'template_default': 'zz',
+\ 'template_default': 'vimwiki',
 \ 'template_ext': '.tpl',
 \ 'css_name': 'style0.css',
-\ 'auto_export': 1,}]
+\ 'auto_export': 1,},{
+\ 'path': '/mnt/DATA/proj/vimwikiblog/wiki/',
+\ 'path_html': '/mnt/DATA/proj/vimwikiblog/wiki/html/',
+\ 'auto_export': 0,}]
 
 :set directory=.,$TEMP
 
@@ -560,4 +564,8 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
+"------- vim-go  end   ---------
 
+" 设置快捷键复制选中文本块
+vnoremap <Leader>y y
+vnoremap <Leader>Y "+y
