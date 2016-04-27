@@ -569,3 +569,11 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " 设置快捷键复制选中文本块
 vnoremap <Leader>y y
 vnoremap <Leader>Y "+y
+
+" vimgrep use gr grep curr word
+map gr :call Search_Word()<CR>:copen<CR>
+function Search_Word()
+let w = expand("<cword>") " 在当前光标位置抓词
+execute "vimgrep " w " *"
+endfunction
+
