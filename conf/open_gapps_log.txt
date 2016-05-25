@@ -1,0 +1,226 @@
+# Begin Open GApps Install Log
+-----------------------------------------------------------------------------
+           ROM Android Version | 6.0.1
+                        ROM ID | aicp_jfltexx-userdebug 6.0.1 MMB29T 770a680634 test-keys
+                   ROM Version | aicp_jfltexx_mm-11.0-NIGHTLY-20160129
+               Device Recovery | TWRP 2.8.7.2-AntaresOne
+           Using Bundled XZdec | true
+                   Device Name | jfltexx
+                  Device Model | GT-I9505
+                   Device Type | phone
+                    Device CPU | armeabi-v7a,armeabi
+               getprop Density | 480
+          default.prop Density | 480
+            build.prop Density | 480
+          Display Density Used | 480dpi
+                  Install Type | Dirty[Data NOT Wiped]
+     Google Camera Installed¹ | true
+         FaceUnlock Compatible | true
+      Google Camera Compatible | true
+     New Camera API Compatible | false
+         Current GApps Version | 20160131
+    Current Open GApps Package | aroma
+         Google Camera version | Legacy
+      Installing GApps Version | 20160201
+         Installing GApps Type | aroma
+                   Config Type | exclude
+            Using gapps-config | /tmp/aroma/.gapps-config
+     Remove Stock/AOSP Browser | true[gapps-config]
+      Remove Stock/AOSP Camera | true[default]
+       Remove Stock/AOSP Email | true[default]
+     Remove Stock/AOSP Gallery | false[gapps-config]
+    Remove Stock/AOSP Launcher | true[default]
+     Remove Stock/AOSP MMS App | true[gapps-config]
+    Remove Stock/AOSP Pico TTS | true[gapps-config]
+        Ignore Google Contacts | false[ContactsGoogle]
+        Ignore Google Keyboard | false[KeyboardGoogle]
+Ignore Google Package Installer | false[PackageInstallerGoogle]
+         Ignore Google NFC Tag | false[TagGoogle]
+         Ignore Google WebView | false[WebViewGoogle]
+                     SwypeLibs | 922 (KB)
+        Total System Size (KB) | 2781928
+        Used System Space (KB) | 1157044
+       Current Free Space (KB) | 1624884
+  Post Install Free Space (KB) | 1569482       << See Calculations Below
+                 - Installing  | androidforwork
+                 - Installing  | calculatorgoogle
+                 - Installing  | calendargoogle
+                 - Installing  | cameragooglelegacy
+                 - Installing  | clockgoogle
+                 - Installing  | cloudprint
+                 - Installing  | contactsgoogle
+                 - Installing  | docs
+                 - Installing  | drive
+                 - Installing  | facedetect
+                 - Installing  | faceunlock
+                 - Installing  | fitness
+                 - Installing  | gmail
+                 - Installing  | googlenow
+                 - Installing  | googleplus
+                 - Installing  | googletts
+                 - Installing  | hangouts
+                 - Installing  | keep
+                 - Installing  | keyboardgoogle
+                 - Installing  | korean
+                 - Installing  | maps
+                 - Installing  | messenger
+                 - Installing  | music
+                 - Installing  | newswidget
+                 - Installing  | packageinstallergoogle
+                 - Installing  | photos
+                 - Installing  | pinyin
+                 - Installing  | search
+                 - Installing  | sheets
+                 - Installing  | slides
+                 - Installing  | speech
+                 - Installing  | street
+                 - Installing  | taggoogle
+                 - Installing  | talkback
+                 - Installing  | translate
+                 - Installing  | webviewgoogle
+                 - Installing  | youtube
+                 - Installing  | zhuyin
+-----------------------------------------------------------------------------
+                  ¹ Previously installed with Open GApps
+# End Open GApps Install Log
+
+# Begin GApps Size Calculations
+-----------------------------------------------------------------------------
+  TYPE  |         DESCRIPTION        |      SIZE |   TOTAL
+        |         Current Free Space |   1624884 | 1624884
+ Remove |             Existing GApps | +  777432 | 2402316
+ Remove |             Obsolete Files | +      16 | 2402332
+ Remove |                basicdreams | +       0 | 2402332
+ Remove |                    browser | +       0 | 2402332
+ Remove |            calculatorstock | +       0 | 2402332
+ Remove |              calendarstock | +       0 | 2402332
+ Remove |                camerastock | +    3736 | 2406068
+ Remove |                 clockstock | +       0 | 2406068
+ Remove |                  cmaccount | +       0 | 2406068
+ Remove |              cmsetupwizard | +       0 | 2406068
+ Remove |                  cmupdater | +       0 | 2406068
+ Remove |               cmwallpapers | +       0 | 2406068
+ Remove |              contactsstock | +       0 | 2406068
+ Remove |                      email | +       0 | 2406068
+ Remove |                    fmradio | +       0 | 2406068
+ Remove |                     galaxy | +       0 | 2406068
+ Remove |              keyboardstock | +       0 | 2406068
+ Remove |                   launcher | +       0 | 2406068
+ Remove |             livewallpapers | +       0 | 2406068
+ Remove |                        mms | +       0 | 2406068
+ Remove |                 noisefield | +       0 | 2406068
+ Remove |      packageinstallerstock | +       0 | 2406068
+ Remove |                  phasebeam | +       0 | 2406068
+ Remove |                 photophase | +       0 | 2406068
+ Remove |                 phototable | +       0 | 2406068
+ Remove |                    picotts | +       0 | 2406068
+ Remove |                 simtoolkit | +       0 | 2406068
+ Remove |                     studio | +       0 | 2406068
+ Remove |                   sykopath | +       0 | 2406068
+ Remove |                   tagstock | +       0 | 2406068
+ Remove |    visualizationwallpapers | +       0 | 2406068
+ Remove |               webviewstock | +       0 | 2406068
+ Remove |                whisperpush | +       0 | 2406068
+Install |                     Core² | -   82374 | 2323694
+Install |           androidforwork³ | -     728 | 2322966
+Install |         calculatorgoogle³ | -     968 | 2321998
+Install |           calendargoogle³ | -   20208 | 2301790
+Install |       cameragooglelegacy³ | -   21208 | 2280582
+Install |              clockgoogle³ | -    7324 | 2273258
+Install |               cloudprint³ | -    3820 | 2269438
+Install |           contactsgoogle³ | -    7204 | 2262234
+Install |                     docs³ | -   36068 | 2226166
+Install |                    drive³ | -   19192 | 2206974
+Install |               facedetect³ | -     540 | 2206434
+Install |               faceunlock³ | -   14012 | 2192422
+Install |                  fitness³ | -   19888 | 2172534
+Install |                    gmail³ | -   14040 | 2158494
+Install |                googlenow³ | -   14924 | 2143570
+Install |               googleplus³ | -   26696 | 2116874
+Install |                googletts³ | -   29732 | 2087142
+Install |                 hangouts³ | -   29200 | 2057942
+Install |                     keep³ | -   12480 | 2045462
+Install |           keyboardgoogle³ | -   24536 | 2020926
+Install |                   korean³ | -   12372 | 2008554
+Install |                     maps³ | -   33484 | 1975070
+Install |                messenger³ | -   11908 | 1963162
+Install |                    music³ | -   18660 | 1944502
+Install |               newswidget³ | -    4444 | 1940058
+Install |   packageinstallergoogle³ | -    2056 | 1938002
+Install |                   photos³ | -   23544 | 1914458
+Install |                   pinyin³ | -   21900 | 1892558
+Install |                   search³ | -   40688 | 1851870
+Install |                   sheets³ | -   42180 | 1809690
+Install |                   slides³ | -   48004 | 1761686
+Install |                   speech³ | -   44612 | 1717074
+Install |                   street³ | -   33480 | 1683594
+Install |                taggoogle³ | -     316 | 1683278
+Install |                 talkback³ | -    5432 | 1677846
+Install |                translate³ | -   21536 | 1656310
+Install |            webviewgoogle³ | -   39516 | 1616794
+Install |                  youtube³ | -   17644 | 1599150
+Install |                   zhuyin³ | -   20452 | 1578698
+        |             Buffer Space² | -    9216 | 1569482
+-----------------------------------------------------------------------------
+                        Post Install Free Space | 1569482
+-----------------------------------------------------------------------------
+              ² Required (ALWAYS Installed)
+              ³ Optional (may be removed)
+
+# End GApps Size Calculations
+
+# Begin User's gapps-config
+Exclude
+AndroidPay
+AndroidForWor
+Books
+CalSync
+Chrome
+DMAgent
+Ears
+Earth
+ExchangeGoogle
+FaceUnloc
+GCS
+Indic
+Japanese
+Kore
+Movies
+NewsStand
+Pinyi
+PlayGames
+ProjectFi
+Zhuyi
+BasicDreams
+Browser
+CalendarStoc
+ClockStoc
+CMAccount
+CMSetupWizard
+CMUpdater
+CMWallpapers
+DashCloc
+Emai
+ExchangeStoc
+FMRadio
+Galaxy
+HoloSpir
+KeyboardStoc
+Launcher 
+LiveWallpapers
+MMS
+NoiseField
+Phasebeam
+PhotoPhase
+PhotoTable
+PicoTTS
+SimToolKit
+Studio
+SykoPath
+Termi
+VisualizationWallpapers
+WhisperPush
++CameraStoc
++Gallery
+
+# End User's gapps-config
