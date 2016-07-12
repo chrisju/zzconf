@@ -567,8 +567,8 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 "------- vim-go  end   ---------
 
 " 设置快捷键复制选中文本块
-vnoremap <Leader>y y
-vnoremap <Leader>Y "+y
+vnoremap <Leader>y "+y
+nmap <Leader>p "+p
 
 " vimgrep use gr grep curr word
 map gr :call Search_Word()<CR>:copen<CR>
