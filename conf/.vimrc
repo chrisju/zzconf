@@ -130,7 +130,7 @@ set showmatch
 set matchtime=5
 
 " 在搜索的时候忽略大小写
-"set ignorecase
+set ignorecase
 
 " 不要高亮被搜索的句子（phrases）
 set nohlsearch
@@ -570,10 +570,46 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
 
-" vimgrep use gr grep curr word
-map gr :call Search_Word()<CR>:copen<CR>
-function Search_Word()
-let w = expand("<cword>") " 在当前光标位置抓词
-execute "vimgrep " w " *"
-endfunction
+" 缩进可视化插件 Indent Guides
+" 随 vim 自启动
+"let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=white
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=lightgrey
 
+" *.cpp 和 *.h 间切换
+nmap <silent> <Leader>sw :FSHere<cr>
+
+" 调用 gundo 树
+nnoremap <Leader>ud :GundoToggle<CR>
+
+" 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：grep. NEED ack-grep
+nnoremap <Leader>gr :CtrlSF<CR>
+
+" vim-multiple-cursors v选中内容后C-n多选,可一起编辑
+" Default mapping
+"let g:multi_cursor_next_key='<C-n>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
+
+" easymotion 快速精确跳转
+" usage: <leader><leader>fa v<leader><leader>w
+
+" wildfire 回车选中结对符中字符
+" 快捷键
+map <SPACE> <Plug>(wildfire-fuel)
+vmap <S-SPACE> <Plug>(wildfire-water)
+" 适用于哪些结对符
+let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "ip","a'", 'a"', "a)", "a]", "a}"]
+
+" TODO UltiSnips 模版补全
+" TODO NERD Commenter 注释
