@@ -266,7 +266,7 @@ let g:pymode_options_other= 0
 " 只在下列文件类型被侦测到的时候显示行号，普通文本文件不显示
 
 if has("autocmd")
-    autocmd FileType xml,html,c,cs,java,perl,shell,bash,cpp,python,vim,php,ruby,go,verilog set number
+    autocmd FileType xml,html,c,cs,java,perl,shell,bash,cpp,python,vim,php,ruby,go,verilog,tcl set number
     autocmd FileType xml,html vmap <C-o> <ESC>'<i<!--<ESC>o<ESC>'>o-->
     autocmd FileType java,c,cpp,cs vmap <C-o> <ESC>'<o/*<ESC>'>o*/
     autocmd FileType c,cpp,cs source ~/.vim/cpp/project.vim
@@ -528,15 +528,15 @@ map <F5> :Vimwiki2HTML<cr>
 :map <F2> <ESC>gg:read !echo -e "*`date '+\%Y-\%m-\%d \%H:\%M:\%S'`*\n_cat_\n\`tag\`\n----\n\%toc"<CR>
 
 let g:vimwiki_list = [{
-\ 'path': '/mnt/DATA/proj/wikiblog/',
-\ 'path_html': '/mnt/DATA/proj/vimwikiblog/html/',
-\ 'template_path': '/mnt/DATA/proj/vimwikiblog/config/',
+\ 'path': '/mnt/DATA/proj/p/wikiblog/',
+\ 'path_html': '/mnt/DATA/proj/p/vimwikiblog/html/',
+\ 'template_path': '/mnt/DATA/proj/p/vimwikiblog/config/',
 \ 'template_default': 'vimwiki',
 \ 'template_ext': '.tpl',
 \ 'css_name': 'style0.css',
 \ 'auto_export': 1,},{
-\ 'path': '/mnt/DATA/proj/vimwikiblog/wiki/',
-\ 'path_html': '/mnt/DATA/proj/vimwikiblog/wiki/html/',
+\ 'path': '/mnt/DATA/proj/p/vimwikiblog/wiki/',
+\ 'path_html': '/mnt/DATA/proj/p/vimwikiblog/wiki/html/',
 \ 'auto_export': 0,}]
 
 :set directory=.,$TEMP
@@ -613,3 +613,6 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "ip","a'", 'a"', "a)", "
 
 " TODO UltiSnips 模版补全
 " TODO NERD Commenter 注释
+
+" tcl
+let tcl_extended_syntax=1
