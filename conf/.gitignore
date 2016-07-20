@@ -13,6 +13,7 @@
 *.lo
 *.la
 *.pyc
+*.log
 
 tags
 tmp/
@@ -35,4 +36,5 @@ workspace.xml
 .project
 proguard-project.txt
 
-
+vivado.jou
+vivado.log

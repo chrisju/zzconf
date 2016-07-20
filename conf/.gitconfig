@@ -24,3 +24,8 @@
 	ui = auto
 [credential]
 	helper = cache
+[user]
+	email = zhuzhu101011@gmail.com
+	name = chrisju
+[push]
+	default = matching
