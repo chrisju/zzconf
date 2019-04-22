@@ -89,6 +89,7 @@ alias zzvps='ssh zz@216.189.150.152 -p 2222'
 alias todo='grep -rin TODO .'
 alias pos='xdotool getmouselocation'
 #byzanz-record -d 10 -x 71 -y 328 -w 600 -h 300 my_gif.gif
+alias todo='grep -rin "\<todo\>"'
 
 #vsc
 alias vsc204='ssh zhuweiwei@192.168.2.204'  #111111
