@@ -82,8 +82,10 @@ alias pyupload='cd /mnt/DATA/upload;python ~/script/SimpleHTTPServerWithUpload.p
 alias zzcdtm='cd ~/.longene/tm2013/drive_c/Program\ Files/Tencent/tm2013/Users/69791669/FileRecv/'
 alias tmrestart='ps aux|grep wine|awk '\''{print $2}'\''|xargs kill -9;nohup /opt/longene/tm2013/tm2013.sh 1>/dev/null 2>1 &'
 alias zzupblog='cd /mnt/DATA/proj/p/vimwikiblog/;python3 tools/vimwiki2blog.py -c config/config.json'
-alias zzproxy='export http_proxy=127.0.0.1:8118;export https_proxy=127.0.0.1:8118;export ftp_proxy=127.0.0.1:8118'
-alias zzproxyoff='export http_proxy=;export https_proxy=;export ftp_proxy='
+#alias zzproxy='export http_proxy=127.0.0.1:8118;export https_proxy=127.0.0.1:8118;export ftp_proxy=127.0.0.1:8118'
+#alias zzproxyoff='export http_proxy=;export https_proxy=;export ftp_proxy='
+alias zzproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias zzproxyoff='export ALL_PROXY='
 alias zzcpb2g='cd /mnt/DATA/proj/p;rm -rf ghvimwikiblog/* ;cp -r  vimwikiblog/* ghvimwikiblog/;cd ghvimwikiblog'
 alias zzvps='ssh zz@216.189.150.152 -p 2222'
 alias todo='grep -rin TODO .'
@@ -100,3 +102,5 @@ export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
 source /mnt/DATA/soft/Xilinx/Vivado/2015.2/settings64.sh
 alias xl-gcc='arm-xilinx-linux-gnueabi-gcc'
 alias tclvivado='vivado -mode tcl'
+
+alias fileserver='cd /data/soft/fileserver/ &&  python /data/soft/SimpleHTTPServerWithUpload.py'
