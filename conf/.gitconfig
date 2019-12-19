@@ -4,6 +4,7 @@
     cia = commit -a --amend
     st = status
     logc = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset'
+    cat = cat-file -p
     logsimple = log --graph --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset: %s %Cblue(%ar)%Creset'
     logfile = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --stat
     logweek = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --since=5.days
@@ -12,14 +13,21 @@
     svnclone = svn clone --localtime
     svnup = svn rebase --localtime
     svncommit = svn dcommit --localtime
+	diffall = git-diffall
 [core]
     excludesfile = ~/.gitignore
 [diff]
-	tool = vimdiff
-[difftool "vimdiff"]
-	cmd = vimdiff
+    tool = meld
 [difftool]
-	prompt = false
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!) explained below.
+    #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [color]
 	ui = auto
 [credential]
