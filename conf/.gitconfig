@@ -16,6 +16,8 @@
 	diffall = git-diffall
 [core]
     excludesfile = ~/.gitignore
+    # set tab width to 4
+	pager = less -x1,5
 [diff]
     tool = meld
 [difftool]
