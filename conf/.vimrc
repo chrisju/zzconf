@@ -33,7 +33,8 @@ filetype indent on
 set viminfo+=!
 
 " 带有如下符号的单词不要被换行分割
-set iskeyword+=_,$,@,%,#,-
+"set iskeyword+=_,$,@,%,#,-
+set iskeyword+=_,$,@,%,#
 
 " 语法高亮
 syntax on
