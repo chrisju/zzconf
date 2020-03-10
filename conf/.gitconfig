@@ -5,6 +5,9 @@
     st = status
     logc = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset'
     cat = cat-file -p
+    up = remote update origin --prune
+    update = remote update origin --prune
+    merge1 = merge --squash
     logsimple = log --graph --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset: %s %Cblue(%ar)%Creset'
     logfile = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --stat
     logweek = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --since=5.days
@@ -14,6 +17,9 @@
     svnup = svn rebase --localtime
     svncommit = svn dcommit --localtime
 	diffall = git-diffall
+	sbu = submodule update
+	sbp = submodule foreach git pull
+	sbc = submodule foreach git co
 [core]
     excludesfile = ~/.gitignore
     # set tab width to 4
@@ -35,6 +41,8 @@
 [credential]
 	helper = cache
 [user]
+    #email = chris.zhu@xvisiotech.com.cn
+	#name = chrisju
 	email = zhuzhu101011@gmail.com
 	name = chrisju
 [push]
