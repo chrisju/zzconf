@@ -1,12 +1,121 @@
-#
-# ~/.bashrc
-#
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-PS1='[\u@\h \W]\$ '
-PS1='\[\033[01;34m\][\u\[\033[00m\]@ \h \[\033[01;32m\]\W\[\033[01;34m\]]\[\033[00m\]\$ '
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\][\u\[\033[00m\]@ \h \[\033[01;32m\]\W\[\033[01;34m\]]\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 # for history
 # Disable terminal flow control altogether to use ctrl-s in history searching
@@ -19,11 +128,11 @@ export GST_ID3_TAG_ENCODING=GBK:UTF-8:GB18030
 export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030
 
 #history
-export HISTSIZE=100000  #最大数目
-export HISTFILESIZE=10000000 #最大文件
-export PROMPT_COMMAND="history -a"  #实时记录
-export HISTCONTROL=ignoreboth:erasedups #去除重复
-#export HISTIGNORE="&:ls:ll:la:lp:git st:git push:git diff:git logc:gitg:. *:pwd:cd -:cd ..:zzupblog:man *:fg:py:py3:top"
+HISTSIZE=9999999  #最大数目
+HISTFILESIZE=10000000 #最大文件
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"  #实时记录
+HISTCONTROL=ignoreboth:erasedups #去除重复
+#HISTIGNORE="&:ls:ll:la:lp:git st:git push:git diff:git logc:gitg:. *:pwd:cd -:cd ..:zzupblog:man *:fg:py:py3:top"
 
 #golang
 export PATH=$PATH:/usr/local/go/bin:/home/zz/script
@@ -32,12 +141,23 @@ export GOPATH=/mnt/DATA/proj/p/go
 export PYTHONSTARTUP=~/.pythonstartup
 
 ##android
-#export JAVA_HOME=/opt/java6/jdk1.6.0_45
-#export PATH=$PATH:$JAVA_HOME/bin
-#export ANDROID_NDK=/mnt/DATA/dev/android-ndk-r9
-#export PATH=$PATH:$ANDROID_NDK
-#export ANDROID_SDK=/mnt/DATA/dev/android-studio/sdk
-#export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
+export JAVA_HOME=/data/soft/jdk1.8.0_231
+export PATH=$JAVA_HOME/bin:$PATH
+export ANDROID_NDK=/home/zww/soft/Android/SDK/ndk/21.3.6528147
+export PATH=$ANDROID_NDK:$PATH
+export NDK=$ANDROID_NDK
+export ANDROID_SDK=/home/zww/soft/Android/SDK
+export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
+export ANDROID_CMAKE_BIN=/home/zww/soft/Android/SDK/cmake/3.6.4111459/bin/
+
+export ANDROID_HOME=$ANDROID_SDK
+export ANDROID_NDK_HOME=$ANDROID_NDK
+
+#alias logcatxvisio="adb shell ps|grep -i xvisio|awk '{print \$2}'|xargs -I {} adb logcat --pid={}"
+#alias logcat="xargs -I {} adb shell grep -i {}|awk '{print \$2}'|xargs -I {} adb logcat --pid={}"
+#alias androidstartsettings="adb shell am start -n com.android.settings/com.android.settings.Settings"
+#alias dmake="cmake -DCMAKE_BUILD_TYPE=Debug"
+
 #
 ## for archlinux
 #alias vi=vim
@@ -49,10 +169,9 @@ export PYTHONSTARTUP=~/.pythonstartup
 #
 ## 下载网站
 ## -t重试次数 -Q总大小限制 -l深度可用数字
-#alias zzgetsite='wget -t 5 -Q 100m -r -E -l inf -k -p -np'
-##alias zzgetsite2='wget -r -p -np -k'
+alias zzgetsite='wget -t 5 -Q 100m -r -E -l inf -k -p -np'
+#alias zzgetsite2='wget -r -p -np -k'
 #
-#alias zzval='valgrind --tool=memcheck --leak-check=full'
 #alias recordscreen='ffmpeg -f x11grab -s 1366x768 -r 25 -i :0.0 -sameq /tmp/out.mpg'
 #
 ##alias n7open="mtpfs -o allow_other /media/n7"
@@ -75,32 +194,31 @@ alias top='htop'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
-alias zzss='sslocal -c /etc/shadowsocks/config-puff.json'
-alias zzss2='sslocal -c /etc/shadowsocks/config-vps.json'
-alias pyserver='python -m SimpleHTTPServer'
-alias pyupload='cd /mnt/DATA/upload;python ~/script/SimpleHTTPServerWithUpload.py'
-alias zzcdtm='cd ~/.longene/tm2013/drive_c/Program\ Files/Tencent/tm2013/Users/69791669/FileRecv/'
-alias tmrestart='ps aux|grep wine|awk '\''{print $2}'\''|xargs kill -9;nohup /opt/longene/tm2013/tm2013.sh 1>/dev/null 2>1 &'
-alias zzupblog='cd /mnt/DATA/proj/p/vimwikiblog/;python3 tools/vimwiki2blog.py -c config/config.json'
+alias zzdu='du -s * .[!.]* | sort -nr '
+alias zzduh='du -s * .[!.]* | sort -nr | head -n 15'
+
+alias zzinxi='inxi -Fxz'
+alias zzsync='rsyanc -avzPh'
+
+alias zzval='valgrind --tool=memcheck --leak-check=full'
+#alias zzss='sslocal -c /etc/shadowsocks/config-puff.json'
+#alias zzss2='sslocal -c /etc/shadowsocks/config-vps.json'
+#alias zzcdtm='cd ~/.longene/tm2013/drive_c/Program\ Files/Tencent/tm2013/Users/69791669/FileRecv/'
+#alias tmrestart='ps aux|grep wine|awk '\''{print $2}'\''|xargs kill -9;nohup /opt/longene/tm2013/tm2013.sh 1>/dev/null 2>1 &'
+#alias zzcpb2g='cd /mnt/DATA/proj/p;rm -rf ghvimwikiblog/* ;cp -r  vimwikiblog/* ghvimwikiblog/;cd ghvimwikiblog'
+#alias zzupblog='cd /mnt/DATA/proj/p/vimwikiblog/;python3 tools/vimwiki2blog.py -c config/config.json'
 #alias zzproxy='export http_proxy=127.0.0.1:8118;export https_proxy=127.0.0.1:8118;export ftp_proxy=127.0.0.1:8118'
 #alias zzproxyoff='export http_proxy=;export https_proxy=;export ftp_proxy='
 alias zzproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias zzproxyoff='export ALL_PROXY='
-alias zzcpb2g='cd /mnt/DATA/proj/p;rm -rf ghvimwikiblog/* ;cp -r  vimwikiblog/* ghvimwikiblog/;cd ghvimwikiblog'
-alias zzvps='ssh zz@216.189.150.152 -p 2222'
-alias todo='grep -rin TODO .'
 alias pos='xdotool getmouselocation'
 #byzanz-record -d 10 -x 71 -y 328 -w 600 -h 300 my_gif.gif
 alias todo='grep -rin "\<todo\>"'
 
-#vsc
-alias vsc204='ssh zhuweiwei@192.168.2.204'  #111111
-alias zzdownncbi='/mnt/DATA/soft/script/downloadncbi.py'
-
-#FPGA
-export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
-source /mnt/DATA/soft/Xilinx/Vivado/2015.2/settings64.sh
-alias xl-gcc='arm-xilinx-linux-gnueabi-gcc'
-alias tclvivado='vivado -mode tcl'
-
 alias fileserver='cd /data/soft/fileserver/ &&  python /data/soft/SimpleHTTPServerWithUpload.py'
+alias zzdockerclear='docker rm $(docker ps -a -q)'
+alias zzrdpnb='xfreerdp /u:"xvisio" /v:192.168.1.200:3389'
+
+#alias zzxfcerecover='cp ~/desktopbackup/xfce4-panel-2.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml'
+#alias zzxfcerestart='xfce4-panel --quit ; pkill xfconfd ; nohup xfce4-panel &'
+#alias zzfix='zzxfcerecover;zzxfcerestart'

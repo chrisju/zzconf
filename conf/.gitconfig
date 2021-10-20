@@ -7,6 +7,7 @@
     cat = cat-file -p
     up = remote update origin --prune
     update = remote update origin --prune
+    pull = lfs pull
     merge1 = merge --squash
     logsimple = log --graph --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset: %s %Cblue(%ar)%Creset'
     logfile = log --graph --pretty=format:'%Cred%h%Creset %Cgreen%an%Creset -%C(yellow)%d%Creset %s %C(green)(%cr)%Creset\t%C(bold blue)%ai%Creset' --stat
@@ -17,9 +18,11 @@
     svnup = svn rebase --localtime
     svncommit = svn dcommit --localtime
 	diffall = git-diffall
-	sbu = submodule update
-	sbp = submodule foreach git pull
-	sbc = submodule foreach git co
+	diffsub = diff --submodule=diff
+	showsub = show --submodule=diff
+	sbu = submodule update --init --recursive
+    sbp = submodule foreach git pull
+	sbc = submodule foreach git checkout
 [core]
     excludesfile = ~/.gitignore
     # set tab width to 4
@@ -41,9 +44,14 @@
 [credential]
 	helper = cache
 [user]
-    #email = chris.zhu@xvisiotech.com.cn
-	#name = chrisju
-	email = zhuzhu101011@gmail.com
+    email = mchrisju@gmail.com
 	name = chrisju
 [push]
 	default = matching
+[cola]
+	spellcheck = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -597,7 +597,10 @@ nnoremap <Leader>ud :GundoToggle<CR>
 let g:ctrlsf_default_view_mode = 'compact'
 "nnoremap <Leader>gr :CtrlSF<CR>
 nnoremap gr :CtrlSF<CR>
-nnoremap <C-f> :CtrlSF<CR>
+nnoremap <C-f> :CtrlSF -ignorecase<Space>
+nnoremap <Leader>f :CtrlSF<Space>
+
+nnoremap <C-q> :q<CR>
 
 " vim-multiple-cursors v选中内容后C-n多选,可一起编辑
 " Default mapping
