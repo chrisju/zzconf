@@ -135,7 +135,7 @@ HISTCONTROL=ignoreboth:erasedups #去除重复
 #HISTIGNORE="&:ls:ll:la:lp:git st:git push:git diff:git logc:gitg:. *:pwd:cd -:cd ..:zzupblog:man *:fg:py:py3:top"
 
 #golang
-export PATH=$PATH:/usr/local/go/bin:/home/zz/script
+export PATH=$PATH:/usr/local/go/bin:/home/zz/bin:/home/zz/script
 export GOPATH=/mnt/DATA/proj/p/go
 
 export PYTHONSTARTUP=~/.pythonstartup
@@ -143,12 +143,12 @@ export PYTHONSTARTUP=~/.pythonstartup
 ##android
 export JAVA_HOME=/data/soft/jdk1.8.0_231
 export PATH=$JAVA_HOME/bin:$PATH
-export ANDROID_NDK=/home/zww/soft/Android/SDK/ndk/21.3.6528147
+export ANDROID_NDK=/home/zz/Android/SDK/ndk/21.3.6528147
 export PATH=$ANDROID_NDK:$PATH
 export NDK=$ANDROID_NDK
-export ANDROID_SDK=/home/zww/soft/Android/SDK
+export ANDROID_SDK=/home/zz/Android/SDK
 export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
-export ANDROID_CMAKE_BIN=/home/zww/soft/Android/SDK/cmake/3.6.4111459/bin/
+export ANDROID_CMAKE_BIN=/home/zz/Android/SDK/cmake/3.6.4111459/bin/
 
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_NDK_HOME=$ANDROID_NDK
@@ -194,8 +194,8 @@ alias top='htop'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
-alias zzdu='du -s * .[!.]* | sort -nr '
-alias zzduh='du -s * .[!.]* | sort -nr | head -n 15'
+alias zzduall='du -s * .[!.]* | sort -nr '
+alias zzdu='du -s * .[!.]* | sort -nr | head -n 15'
 
 alias zzinxi='inxi -Fxz'
 alias zzsync='rsyanc -avzPh'

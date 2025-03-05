@@ -23,6 +23,7 @@
 	sbu = submodule update --init --recursive
     sbp = submodule foreach git pull
 	sbc = submodule foreach git checkout
+    mbr = show-branch
 [core]
     excludesfile = ~/.gitignore
     # set tab width to 4
