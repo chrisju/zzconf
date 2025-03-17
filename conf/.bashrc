@@ -141,14 +141,15 @@ export GOPATH=/mnt/DATA/proj/p/go
 export PYTHONSTARTUP=~/.pythonstartup
 
 ##android
-export JAVA_HOME=/data/soft/jdk1.8.0_231
+export JAVA_HOME=/opt/android-studio/jbr
 export PATH=$JAVA_HOME/bin:$PATH
-export ANDROID_NDK=/home/zz/Android/SDK/ndk/21.3.6528147
+export ANDROID_NDK=/home/zz/Android/SDK/ndk/29.0.13113456
 export PATH=$ANDROID_NDK:$PATH
 export NDK=$ANDROID_NDK
 export ANDROID_SDK=/home/zz/Android/SDK
 export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
 export ANDROID_CMAKE_BIN=/home/zz/Android/SDK/cmake/3.6.4111459/bin/
+alias gradle='./gradlew'
 
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_NDK_HOME=$ANDROID_NDK
@@ -191,6 +192,7 @@ alias lp="ls -l |awk '{print \$1 \" \" \$2 \" \" \$3 \" \" \$4 \" \" \$5 \" \" \
 alias less='less -i'
 alias bc='bc -l'
 alias top='htop'
+alias top2='htop -d 30'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
