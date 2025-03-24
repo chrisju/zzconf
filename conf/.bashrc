@@ -193,9 +193,12 @@ alias less='less -i'
 alias bc='bc -l'
 alias top='htop'
 alias top2='htop -d 30'
-alias py='python'
 alias py2='python2'
 alias py3='python3'
+if ! command -v python &>/dev/null; then
+  alias python='python3'
+fi
+alias py='python'
 alias zzduall='du -s * .[!.]* | sort -nr '
 alias zzdu='du -s * .[!.]* | sort -nr | head -n 15'
 
@@ -216,6 +219,8 @@ alias zzproxyoff='export ALL_PROXY='
 alias pos='xdotool getmouselocation'
 #byzanz-record -d 10 -x 71 -y 328 -w 600 -h 300 my_gif.gif
 alias todo='grep -rin "\<todo\>"'
+alias cd..='cd ..'
+alias pymk='python setup.py sdist bdist_wheel'
 
 alias fileserver='cd /data/soft/fileserver/ &&  python /data/soft/SimpleHTTPServerWithUpload.py'
 alias zzdockerclear='docker rm $(docker ps -a -q)'
