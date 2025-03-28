@@ -23,7 +23,9 @@
 	sbu = submodule update --init --recursive
     sbp = submodule foreach git pull
 	sbc = submodule foreach git checkout
-    mbr = show-branch
+    mbr = show-branch -a
+    untracked = ls-files --others
+    ls = ls-files
 [core]
     excludesfile = ~/.gitignore
     # set tab width to 4

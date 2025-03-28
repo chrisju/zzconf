@@ -33,6 +33,7 @@ project.properties
 .settings/
 build/
 .gradle/
+.idea/
 workspace.xml
 .project
 proguard-project.txt

@@ -15,10 +15,6 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -229,3 +225,18 @@ alias zzrdpnb='xfreerdp /u:"xvisio" /v:192.168.1.200:3389'
 #alias zzxfcerecover='cp ~/desktopbackup/xfce4-panel-2.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml'
 #alias zzxfcerestart='xfce4-panel --quit ; pkill xfconfd ; nohup xfce4-panel &'
 #alias zzfix='zzxfcerecover;zzxfcerestart'
+
+
+alias gitrename='git commit --amend --author="chrisju <mchrisju@gmail.com>" --no-edit && git rebase --continue'
+alias cdme='cd /home/r/proj/zz'
+alias cd..='cd ..'
+alias pymk='python setup.py sdist bdist_wheel'
+#alias vi='nvim'
+export MYNAME=朱偉偉
+
+export PATH=$PATH:/home/r/proj/zz/soft/pypy3.11-v7.3.19-linux64/bin
+export PATH=$PATH:/home/r/proj/zz/script
+export GOPATH=/home/r/proj/zz/go
+export PATH=$PATH:$GOPATH/bin
+
+

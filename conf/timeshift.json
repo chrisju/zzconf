@@ -31,6 +31,29 @@
     "/home/zz/.gradle/***",
     "+ /home/zz/.**",
     "+ /root/.**"
+
+    "/home/r/.cache/***",
+    "/home/r/.repo/***",
+    "/home/r/.deepinwine/***",
+    "/home/r/.mozila/***",
+    "/home/r/.config/google-chrome-beta/Default/Service Worker/ScriptCache/***",
+    "/home/r/.config/google-chrome-beta/Default/Service Worker/CacheStorage/***",
+    "/home/r/.config/microsoft-edge/***",
+    "/home/r/.config/Code/CachedExtensionVSIXs/***",
+    "/home/r/.config/Code/Cache/***",
+    "/home/r/.config/Code/CachedData/***",
+    "/home/r/.config/VSCodium/CachedExtensionVSIXs/***",
+    "/home/r/.config/VSCodium/Cache/***",
+    "/home/r/.config/VSCodium/CachedData/***",
+    "/home/r/.qnx/swupdate/***",
+    "/home/r/.ccache/***",
+    "/home/r/.android/***",
+    "/home/r/.gradle/***",
+    "+ /home/r/.**",
+    "+ /root/.**",
+    "/var/empty/**",
+    "/var/lib/libvirt/**",
+    "/home/clark/**"
   ],
   "exclude-apps" : []
 }
