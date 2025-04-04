@@ -217,8 +217,10 @@ alias pos='xdotool getmouselocation'
 alias todo='grep -rin "\<todo\>"'
 alias cd..='cd ..'
 alias pymk='python setup.py sdist bdist_wheel'
+alias pymk='python -m build'
+alias pyup='twine upload dist/*'
 
-alias fileserver='cd /data/soft/fileserver/ &&  python /data/soft/SimpleHTTPServerWithUpload.py'
+#alias fileserver='cd /data/soft/fileserver/ &&  python /data/soft/SimpleHTTPServerWithUpload.py'
 alias zzdockerclear='docker rm $(docker ps -a -q)'
 alias zzrdpnb='xfreerdp /u:"xvisio" /v:192.168.1.200:3389'
 
